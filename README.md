@@ -1,0 +1,2 @@
+# Practicerepo
+Devops practice codes
