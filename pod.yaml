@@ -1,10 +1,18 @@
-apiVersion: v1
-kind: Pod
+apiVersion: apps/v1
+kind: Deployment
 metadata:
-  name: first-nginx-pod
+  name: first-nginx-deployment
   namespace: default
 spec:
   replicas: 3
-  containers:
-    - name: first-nginx-container
-      image: nginx:latest
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+        - name: first-nginx-container
+          image: nginx:latest
