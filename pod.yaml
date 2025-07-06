@@ -4,6 +4,7 @@ metadata:
   name: first-nginx-pod
   namespace: default
 spec:
+  replicas: 1
   containers:
     - name: first-nginx-container
       image: nginx:latest
